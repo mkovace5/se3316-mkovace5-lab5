@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-//import { HttpService } from './http.service';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'se3316-mkovace5-lab4';
+  title = 'se3316-mkovace5-lab5';
 
-  //constructor(private HttpService: HttpService) {}
+  constructor(public auth: AuthService) {}
 
   ngOnInit() {
 

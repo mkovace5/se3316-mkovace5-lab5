@@ -109,9 +109,9 @@ nev.resendVerificationEmail(email, function(err, userFound) {
 
 	}
 	else{
-		
+
 	}
-})
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
