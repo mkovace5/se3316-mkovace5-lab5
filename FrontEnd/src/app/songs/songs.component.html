@@ -1,0 +1,12 @@
+
+<h1>Songs</h1>
+
+<ul *ngIf="songs">
+        <li *ngFor="let song of songs">
+            <p class="title">{{ song.title }}</p>
+            <p class="artist">Artist: {{ song.artist }}</p>
+            <p class="album">Album: {{ song.album }}</p>
+            <p class="year">Year: {{ song.year }}</p>
+            <p class="genre">Genre: {{ song.genre }}</p>
+        </li>
+    </ul>

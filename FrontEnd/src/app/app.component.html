@@ -1,22 +1,24 @@
 
 <header>
   <div class="container">
-    <a href="#" class="logo>">Mina's Music</a>
-    <nav><img src = "../../../../hey.jpg" style = "float:left" class="pic" alt="logo"></nav>
+    <a href="#" routerLink="/" class="logo>">Mina's Music </a><br>
+    <img class="pic" src="assets/img/mina-logo.png">
     <nav class="authStatus">
       <ng-template [ngIf]="!auth.loggingIn">
         <ul>
           <li><a href="#" routerLink="/">Home</a></li>
+          <li><a href='#' routerLink="/songs">Songs</a> </li>
           <li><a href="#" *ngIf="!auth.loggedIn" (click)="auth.login()">Log In</a></li>
-        </ul>
           <span *ngIf="auth.loggedIn && auth.userProfile">
-            {{ auth.userProfile.name }}
-          <span class="divider">|</span>
-            <a (click)="auth.logout()">Log Out</a>
+              <li><a href="#" (click)="auth.logout()">Log Out</a></li>
           </span>
+        </ul>
+          
       </ng-template>
-      
     </nav>
+    <span *ngIf="auth.loggedIn && auth.userProfile">
+        <a class="user" style="float:left"> {{ auth.userProfile.name }}</a>
+    </span>
   </div>
 </header>
 

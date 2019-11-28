@@ -3,7 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
 
-$primary: rgb(90, 194, 207);
+$primary: rgb(149, 109, 194);
 
 body {
     background: rgb(24, 23, 23);
@@ -19,18 +19,22 @@ body {
 
 header {
     background: $primary;
-    padding: 1em 0;
+    padding: 1.7em 0;
 
     a {
-        color: black;
+        color: white;
         text-decoration: none;
     }
     a.logo {
         font-weight: bold;
     }
+    a.user{
+        font-size: 12px;
+    }
 
     nav {
         float: right;
+        
 
         ul {
             list-style-type: none;
@@ -38,7 +42,9 @@ header {
             display: flex;
 
             li a {
-                padding: 1em;
+                padding: 0.6em;
+                position: relative;
+                top: -8px;
 
                 &:hover {
                     background: darken($primary, 10%);

@@ -15,10 +15,10 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get('http://localhost:8080/users/test');
+    return this.http.get('http://localhost:8080/songs/get');
   }
 
-  baseUrl:string = "http://localhost:8080/users/create";
+  baseUrl:string = "http://localhost:8080/songs/create";
 
   postItem(obj){
     console.log(obj);

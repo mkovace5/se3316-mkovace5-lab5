@@ -1,45 +1,50 @@
 //controller user
 
-const User = require('../models/user.model');
+const Song = require('../models/user.model');
 
 //Simple version, without validation or sanitation
 exports.test = function (req, res) {
     res.send('Greetings from the Test controller!');
 };
 
-exports.user_create = function (req, res) {
-    let user = new User(
+exports.song_create = function (req, res) {
+    let song = new Song(
         {
-            username: req.body.username,
-            password: req.body.password
+            title: req.body.title,
+            artist: req.body.artist,
+            album: req.body.album,
+            year: req.body.year,
+            genre: req.body.genre
         }
     );
 
-    user.save(function (err) {
+    song.save(function (err) {
         if (err) {
             return next(err);
         }
-        res.send('User Created successfully')
+        res.send('Song Created successfully')
     })
 };
 
-exports.user_details = function (req, res) {
-    User.findById(req.params.id, function (err, user) {
+exports.song_details = function (req, res) {
+    Song.findById(req.params.id, function (err, song) {
         if (err) return next(err);
-        res.send(user);
+        res.send(song);
     })
 };
 
-exports.user_update = function (req, res) {
-    User.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, user) {
-        if (err) return next(err);
-        res.send('User udpated.');
-    });
-};
-
-exports.user_delete = function (req, res) {
-    User.findByIdAndRemove(req.params.id, function (err) {
+exports.song_delete = function (req, res) {
+    Song.findByIdAndRemove(req.params.id, function (err) {
         if (err) return next(err);
         res.send('Deleted successfully!');
     })
+};
+
+exports.song_findAll = function(req, res, next){
+    Song.find(function(err, song) {
+            if (err)
+                console.log(err);
+
+            res.send(song);
+        });
 };

@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { NewComponent } from './new/new.component';
 import { AuthService } from './auth/auth.service';
 import { CallbackComponent } from './callback/callback.component';
+import { SongsComponent } from './songs/songs.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { CallbackComponent } from './callback/callback.component';
     HomeComponent,
     HomeComponent,
     NewComponent,
-    CallbackComponent
+    CallbackComponent,
+    SongsComponent
   ],
   imports: [
     BrowserModule,
