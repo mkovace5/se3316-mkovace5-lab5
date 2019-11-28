@@ -37,7 +37,7 @@ exports.song_delete = function (req, res) {
     Song.findByIdAndRemove(req.params.id, function (err) {
         if (err) return next(err);
         res.send('Deleted successfully!');
-    })
+    });
 };
 
 exports.song_findAll = function(req, res, next){
@@ -47,4 +47,11 @@ exports.song_findAll = function(req, res, next){
 
             res.send(song);
         });
+};
+
+exports.song_update = function (req, res) {
+    Song.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, song) {
+        if (err) return next(err);
+        res.send('Song udpated.');
+    });
 };

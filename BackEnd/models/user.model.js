@@ -6,8 +6,8 @@ let SongSchema = new Schema({
     artist: {type: String, required: true, max: 30},
     album: {type: String, required: true, max: 30},
     year: {type: String, required: true, max: 4},
-    genre: {type: String, required: true}
-} {});
+    genre: {type: String, required: true, max: 30}
+},{collection:songs});
 
 // Export the model
 module.exports = mongoose.model('Song', SongSchema);
