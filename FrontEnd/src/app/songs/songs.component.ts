@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service'
+import { NgForm } from "@angular/forms"
 
 @Component({
   selector: 'app-songs',
@@ -17,6 +18,33 @@ export class SongsComponent implements OnInit {
       this.songs = data;
       console.log(this.songs);
     });
+  }
+
+  addSong(form: NgForm){
+    console.log(form.value);
+
+    var songName = form.value.title;
+    var artistName = form.value.artist;
+    var albumName = form.value.album;
+    var songYear = form.value.year;
+    var songGenre = form.value.genre;
+
+    console.log(songName);
+    console.log(artistName);
+    console.log(albumName);
+    console.log(songYear);
+    console.log(songGenre);
+
+    let data: any = Object.assign(
+      { title: songName },
+      { artist: artistName },
+      { album: albumName },
+      { year: songYear },
+      { genre: songGenre }
+    );
+
+    this._http.postSong(data);
+
   }
 
   /*{"songs":[    

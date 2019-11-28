@@ -40,11 +40,12 @@ header {
             list-style-type: none;
             margin: 0;
             display: flex;
-
+            position: relative;
+            top: -8px;
+            
             li a {
                 padding: 0.6em;
-                position: relative;
-                top: -8px;
+                
 
                 &:hover {
                     background: darken($primary, 10%);
