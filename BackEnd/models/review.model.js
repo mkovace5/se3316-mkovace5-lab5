@@ -7,7 +7,7 @@ let ReviewSchema = new Schema({
     songid: {type: String, required: true, max: 30},
     rating: {type: Number, required: true, maxlength: 4},
     reviews: {type: String, required: true},
-},{collection:reviews});
+},{collection:'reviews'});
 
 
 // Export the model

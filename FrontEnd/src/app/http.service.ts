@@ -15,10 +15,10 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get('http://localhost:8080/api/open/song');
+    return this.http.get('http://localhost:8080/songs/api/open/song');
   }
 
-  baseUrl:string = "http://localhost:8080/api/secure/song";
+  baseUrl:string = "http://localhost:8080/songs/api/secure/song";
   baseUrl2:string = "http://localhost:8080/api/admin/deactivate/:id";
 
   postSong(obj){

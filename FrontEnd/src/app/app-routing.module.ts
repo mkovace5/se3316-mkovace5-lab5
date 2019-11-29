@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { NewComponent } from './new/new.component';
 import { CallbackComponent } from './callback/callback.component';
 import { SongsComponent } from './songs/songs.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent },
-  {path: 'new', component: NewComponent },
   {path: 'callback', component: CallbackComponent},
   {path: 'songs', component: SongsComponent}
 ];
