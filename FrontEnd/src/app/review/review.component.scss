@@ -1,0 +1,32 @@
+
+.play-container {
+    padding: 3em;
+    border: 1px solid lightgray;
+    margin-bottom: 1em;
+    margin-top: 3em;
+
+    input{
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+    body{
+        position: relative;
+       
+    }
+    form{
+        color: white;
+    }
+}
+
+#reviewCom{
+    width: 300px;
+}
+
+#ratingNum{
+    height: 0px;
+}
+
+#dropdown{
+    width: 50px;
+    height: 20px;
+}

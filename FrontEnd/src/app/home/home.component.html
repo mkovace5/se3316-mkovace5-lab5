@@ -10,14 +10,16 @@
 </div>
 
 <div class="play-container">
-        <h2 class="text-center">Songs</h2>
+        <h2 class="text-center">Top 10 Songs</h2>
         <ul *ngIf="songs">
-                <li *ngFor="let song of songs">
+                <li *ngFor="let song of songs; let i=index">
                         <p class="title">{{ song.title }}</p>
                         <p class="artist">Artist: {{ song.artist }}</p>
                         <p class="album">Album: {{ song.album }}</p>
                         <p class="year">Year: {{ song.year }}</p>
+                        <p class="comment">Comment: {{ song.comment }}</p>
                         <p class="genre">Genre: {{ song.genre }}</p>
+                        <p class="rating">Rating: </p>
                 </li>
         </ul>  
         

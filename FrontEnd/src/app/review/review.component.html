@@ -1,0 +1,17 @@
+
+
+<div class="play-container">
+    <form #addReviewForm='ngForm' (ngSubmit)="addReview(addReviewForm)" class="reviewForm">
+        <div class="form-group">
+            Choose Song: <select ng-model="selectedSong" ng-options="id for id in songs" id="dropdown">
+            </select>
+        </div>
+        <div class="form-group">
+            Add Rating: <input id="ratingNum" class="form-control" type="number" min="0" max="5" name="rating" [(ngModel)]="rating" #songRating="ngModel">
+        </div>
+            <input id="reviewCom" class="form-control" type="text" placeholder="Leave a review" name="review" [(ngModel)]="review" #songReview="ngModel">
+        <div class="form-group">  
+            <button type="submit" id="reviewBtn">Add Review</button>
+        </div>
+    </form>
+</div>

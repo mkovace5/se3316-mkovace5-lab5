@@ -6,7 +6,7 @@ const Review = require('../models/review.model');
 exports.review_create = function (req, res) {
     let review = new Review(
         {
-            song: req.body.song,
+            songid: req.body.songid,
             rating: req.body.rating,
             reviews: req.body.reviews
         }

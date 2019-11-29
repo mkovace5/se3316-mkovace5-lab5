@@ -2,10 +2,7 @@
 span {
     font-weight: bold;
     font-style: white;
-    background: lightgray;
     padding: .3em .8em;
-    cursor: pointer;
-    user-select: none;
 }
 
 div{
@@ -31,3 +28,33 @@ div{
     position: relative;
     top: -40px;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        background: rgb(48, 48, 48);
+        padding: 1em;
+        margin-right: 10px;
+        width: 20%;
+        height: 200px;
+        margin-bottom: 1em;
+        display: flex;
+        flex-direction: column;
+
+        p {
+            margin: 0;
+        }
+
+        p.name {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+    }
+}
+

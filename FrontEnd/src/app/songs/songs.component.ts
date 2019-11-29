@@ -27,12 +27,14 @@ export class SongsComponent implements OnInit {
     var artistName = form.value.artist;
     var albumName = form.value.album;
     var songYear = form.value.year;
+    var songComment = form.value.comment;
     var songGenre = form.value.genre;
 
     console.log(songName);
     console.log(artistName);
     console.log(albumName);
     console.log(songYear);
+    console.log(songComment);
     console.log(songGenre);
 
     let data: any = Object.assign(
@@ -40,6 +42,7 @@ export class SongsComponent implements OnInit {
       { artist: artistName },
       { album: albumName },
       { year: songYear },
+      { comment: songComment },
       { genre: songGenre }
     );
 

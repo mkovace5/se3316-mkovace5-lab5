@@ -7,6 +7,10 @@ h2{
     color: white;
 }
 
+#comment{
+    width: 200px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -33,5 +37,34 @@ ul {
             font-size: 1.2rem;
         }
         
+    }
+}
+
+.pic{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    left: 600px;
+    top: -600px;
+}
+
+
+.play-container {
+    padding: 3em;
+    border: 1px solid lightgray;
+    margin-bottom: 1em;
+    margin-top: 3em;
+    margin-right: 40em;
+
+    input{
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+    body{
+        position: relative;
+       
+    }
+    form{
+        color: white;
     }
 }

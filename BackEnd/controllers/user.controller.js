@@ -14,6 +14,7 @@ exports.song_create = function (req, res) {
             artist: req.body.artist,
             album: req.body.album,
             year: req.body.year,
+            comment: req.body.comment,
             genre: req.body.genre
         }
     );

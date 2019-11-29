@@ -19,10 +19,16 @@ export class HttpService {
   }
 
   baseUrl:string = "http://localhost:8080/songs/api/secure/song";
-  baseUrl2:string = "http://localhost:8080/api/admin/deactivate/:id";
+  baseUrl2:string = "http://localhost:8080/songs/api/admin/deactivate/:id";
+  baseUrl3:string = "http://localhost:8080/songs/api/secure/add-review/:id";
 
   postSong(obj){
     console.log(obj);
     this.http.post(this.baseUrl, obj, httpHeader).subscribe(data => data);
+  }
+
+  postReview(obj){
+    console.log(obj);
+    this.http.post(this.baseUrl2, obj, httpHeader).subscribe(data => data);
   }
 }

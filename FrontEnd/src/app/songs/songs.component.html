@@ -1,25 +1,33 @@
 
-<h1>Songs</h1>
+ <h1>Songs</h1>
+<div class="play-container">
+   
 
-<form #addSongForm='ngForm' (ngSubmit)="addSong(addSongForm)">
-        <h2 class="text-center">Add New Song</h2>
-          
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Song Title" name="title" [(ngModel)]="title" #songName="ngModel" required="required">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" id="artist" placeholder="Artist" name="artist" [(ngModel)]="artist" #artistName="ngModel" required="required">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" id="album" placeholder="Album" name="album" [(ngModel)]="album" #albumName="ngModel">  
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" id="year" placeholder="Year" name="year" [(ngModel)]="year" #songYear="ngModel">  
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" id="genre" placeholder="Genre" name="genre" [(ngModel)]="genre" #songGenre="ngModel">  
-        </div>
-        <div class="align-center">
-            <button type="submit" class="btn btn-default" id="submit">Submit</button>
-        </div>
-</form>
+    <form #addSongForm='ngForm' (ngSubmit)="addSong(addSongForm)">
+            <h2 class="text-center">Add New Song</h2>
+            
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Song Title" name="title" [(ngModel)]="title" #songName="ngModel" required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="artist" placeholder="Artist" name="artist" [(ngModel)]="artist" #artistName="ngModel" required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="album" placeholder="Album" name="album" [(ngModel)]="album" #albumName="ngModel">  
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="year" placeholder="Year" name="year" [(ngModel)]="year" #songYear="ngModel">  
+            </div>
+            <div class="form-group">
+                    <input type="text" class="form-control" id="comment" placeholder="Comment" name="comment" [(ngModel)]="comment" #songComment="ngModel">  
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="genre" placeholder="Genre" name="genre" [(ngModel)]="genre" #songGenre="ngModel">  
+            </div>
+            <div class="align-center">
+                <button type="submit" class="btn btn-default" id="submit">Submit</button>
+            </div>
+    </form>
+</div>
+
+<img class="pic" src="assets/img/neww.png">
