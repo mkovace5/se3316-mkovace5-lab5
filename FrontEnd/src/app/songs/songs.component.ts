@@ -20,8 +20,12 @@ export class SongsComponent implements OnInit {
     });
   }
 
+
   addSong(form: NgForm){
     console.log(form.value);
+
+    var jsonStr = 
+    '{"mySongs":[{"title":"","artist":"","album":"","year":"","comment":"","genre":""}]}';
 
     var songName = form.value.title;
     var artistName = form.value.artist;
@@ -48,14 +52,15 @@ export class SongsComponent implements OnInit {
 
     this._http.postSong(data);
 
+    var obj = JSON.parse(jsonStr);
+    obj['G11S'].push(data);
+
+    jsonStr = JSON.stringify(obj);
+    console.log(jsonStr);   
   }
 
-  /*{"songs":[    
-    {"title":"Good song", "artist":"whomst", "album":"fun", "year":2000, "genre":"hip hop"},    
-    {"title":"Take some", "artist":"ra", "album":"23", "year":2000, "genre":"dance",  
-    {"title":"Hello", "artist":"1975", "album":"good times", "year":2000, "genre":"pop"},    
-    {"title":"Edges", "artist":"ra", "album":"23", "year":2000, "genre":"dance}   
-]} */ 
+  
+     
 
 }
 

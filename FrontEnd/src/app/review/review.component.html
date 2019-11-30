@@ -3,9 +3,10 @@
 <div class="play-container">
     <form #addReviewForm='ngForm' (ngSubmit)="addReview(addReviewForm)" class="reviewForm">
         <div class="form-group">
-            Choose Song: <select ng-model="selectedSong" ng-options="id for id in songs" id="dropdown">
+            Choose Song: <select ng-model="selectedSong" id="dropdown" class="form-control" name="songid" id="songid" [(ngModel)]="songid" #songID="ngModel">
+                <option *ngFor="let song of songs" value="{{song._id}}" >{{song.title}}</option>
             </select>
-        </div>
+        </div><br>
         <div class="form-group">
             Add Rating: <input id="ratingNum" class="form-control" type="number" min="0" max="5" name="rating" [(ngModel)]="rating" #songRating="ngModel">
         </div>

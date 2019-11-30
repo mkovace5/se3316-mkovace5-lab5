@@ -29,6 +29,6 @@ export class HttpService {
 
   postReview(obj){
     console.log(obj);
-    this.http.post(this.baseUrl2, obj, httpHeader).subscribe(data => data);
+    this.http.post(this.baseUrl3, obj, httpHeader).subscribe(data => data);
   }
 }
