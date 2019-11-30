@@ -1,6 +1,7 @@
 //controller user
 
 const Song = require('../models/user.model');
+const App = require('../app');
 
 //Simple version, without validation or sanitation
 exports.test = function (req, res) {
@@ -15,7 +16,8 @@ exports.song_create = function (req, res) {
             album: req.body.album,
             year: req.body.year,
             comment: req.body.comment,
-            genre: req.body.genre
+            genre: req.body.genre,
+            rating: req.body.rating
         }
     );
 
@@ -28,11 +30,18 @@ exports.song_create = function (req, res) {
 };
 
 exports.song_details = function (req, res) {
-    Song.findById(req.params.id, function (err, song) {
+    Song.finD(req.params.id, function (err, song) {
         if (err) return next(err);
         res.send(song);
     })
 };
+
+exports.song_find = function(req, res){
+    Song.find({$text: {$search: searchString}}).skip(20).limit(10).exec(function(err, song) {
+        if (err) return next(err);
+        res.send(song);
+     });
+}
 
 exports.song_delete = function (req, res) {
     Song.findByIdAndRemove(req.params.id, function (err) {
@@ -41,8 +50,10 @@ exports.song_delete = function (req, res) {
     });
 };
 
+var sorting = {rating:-1};
+
 exports.song_findAll = function(req, res, next){
-    Song.find(function(err, song) {
+    Song.find().sort(sorting).limit(10).find(function(err, song) {
             if (err)
                 console.log(err);
 

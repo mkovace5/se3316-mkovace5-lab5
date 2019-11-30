@@ -13,7 +13,7 @@ router.get('/test', song_controller.test)
 router.post('/api/secure/song', song_controller.song_create);
 router.put('/api/secure/song/:id', song_controller.song_update);
 router.get('/api/open/song', song_controller.song_findAll);
-router.get('/api/open/search', song_controller.song_findAll);
+router.get('/api/open/search', song_controller.song_find);
 //router.get('/api/open/reviews/:id', review_controller._getReviews);
 router.post('/api/secure/add-review/:id', review_controller.review_create);
 //router.post('/api/admin/copyright/:id', );

@@ -47,16 +47,17 @@ export class SongsComponent implements OnInit {
       { album: albumName },
       { year: songYear },
       { comment: songComment },
-      { genre: songGenre }
+      { genre: songGenre },
+      { rating: 0}
     );
 
     this._http.postSong(data);
 
-    var obj = JSON.parse(jsonStr);
+    /*var obj = JSON.parse(jsonStr);
     obj['G11S'].push(data);
 
     jsonStr = JSON.stringify(obj);
-    console.log(jsonStr);   
+    console.log(jsonStr);   */
   }
 
   

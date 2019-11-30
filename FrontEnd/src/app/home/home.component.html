@@ -1,16 +1,21 @@
 
 
-<h1></h1>
 
 <div class="play-container">
         <form>
-        <h2 class="text-center">About</h2>
+        <h2 class="text-center" id="about">About</h2>
         <body>Mina's Music is a site that provides music reviews for all the current hottest songs on the tube with the ability to add your own songs and write your own reviews. Enjoy!</body>
         </form>
 </div>
 
 <div class="play-container">
         <h2 class="text-center">Top 10 Songs</h2>
+        <form #searchForm='ngForm' (ngSubmit)="getSongs(searchForm)" class="searchForm">
+                <div class="form-group">
+                        <input type="search" placeholder="Search for a Song" id="search">
+                </div>
+                <button type="submit">Search</button>
+        </form>
         <ul *ngIf="songs">
                 <li *ngFor="let song of songs; let i=index">
                         <p class="title">{{ song.title }}</p>

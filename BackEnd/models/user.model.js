@@ -8,8 +8,9 @@ let SongSchema = new Schema({
     album: {type: String, required: true, max: 30},
     year: {type: String, required: true, max: 4},
     comment: {type: String},
-    genre: {type: String, required: true, max: 30}
+    genre: {type: String, required: true, max: 30},
+    rating: {type: Number, max: 5}
 },{collection:'songs'});
-
+SongSchema.index({'$**': 'text'});
 // Export the model
 module.exports = mongoose.model('Song', SongSchema);

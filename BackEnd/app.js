@@ -17,6 +17,10 @@ mongoose.connect(uri, {
 	useNewUrlParser: true,
 });
 
+const db = mongoose.connection;
+
+
+
 console.log('Connected to the database (mongoose)')
 
 app.use(bodyParser.json());
