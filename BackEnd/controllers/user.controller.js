@@ -2,6 +2,7 @@
 
 const Song = require('../models/user.model');
 const App = require('../app');
+const Fuse = require('fuse.js');
 
 //Simple version, without validation or sanitation
 exports.test = function (req, res) {
@@ -30,18 +31,41 @@ exports.song_create = function (req, res) {
 };
 
 exports.song_details = function (req, res) {
-    Song.finD(req.params.id, function (err, song) {
+    Song.find(req.params.id, function (err, song) {
         if (err) return next(err);
         res.send(song);
     })
 };
 
-exports.song_find = function(req, res){
-    Song.find({$text: {$search: searchString}}).skip(20).limit(10).exec(function(err, song) {
-        if (err) return next(err);
-        res.send(song);
-     });
+exports.song_find = async function(req, res){
+    // Song.find({$text: {$search: searchString}}).skip(20).limit(10).exec(function(err, song) {
+    //     if (err) return next(err);
+    //     res.send(song);
+    //  });
+    const songs = await Song.find();
+    var options = {
+        shouldSort: true,
+        findAllMatches: true,
+        threshold: 0.6,
+        location: 0,
+        distance: 100,
+        maxPatternLength: 32,
+        minMatchCharLength: 1,
+        keys: [
+          "title",
+          "artist",
+          "album",
+          "year",
+          "comment",
+          "genre"
+        ]
+      };
+      var fuse = new Fuse(songs, options); // "list" is the item array
+      res.send(fuse.search(req.params['search_term']));
+      console.log(req.params['search_term']);
+      
 }
+
 
 exports.song_delete = function (req, res) {
     Song.findByIdAndRemove(req.params.id, function (err) {

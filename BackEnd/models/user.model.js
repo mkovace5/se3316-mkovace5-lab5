@@ -11,6 +11,5 @@ let SongSchema = new Schema({
     genre: {type: String, required: true, max: 30},
     rating: {type: Number, max: 5}
 },{collection:'songs'});
-SongSchema.index({'$**': 'text'});
 // Export the model
 module.exports = mongoose.model('Song', SongSchema);

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 const httpHeader = {
   headers: new HttpHeaders({
@@ -18,8 +18,18 @@ export class HttpService {
     return this.http.get('http://localhost:8080/songs/api/open/song');
   }
 
-  getSongs(){
-    return this.http.get("http://localhost:8080/songs/api/open/search")
+  //getSongs(){
+    //return this.http.get("http://localhost:8080/songs/api/open/search");
+  //}
+
+  searchSongs(search) {
+    //console.log(search);
+    var ser = search.toString();
+    console.log(ser);
+    let params = new HttpParams();
+    params.set("search_term", ser);
+    console.log(params.get("search_term"));
+    return this.http.get("http://localhost:8080/songs/api/open/search" ,{params});
   }
 
   baseUrl:string = "http://localhost:8080/songs/api/secure/song";

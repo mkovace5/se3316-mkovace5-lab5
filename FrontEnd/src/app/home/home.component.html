@@ -10,14 +10,20 @@
 
 <div class="play-container">
         <h2 class="text-center">Top 10 Songs</h2>
-        <form #searchForm='ngForm' (ngSubmit)="getSongs(searchForm)" class="searchForm">
-                <div class="form-group">
-                        <input type="search" placeholder="Search for a Song" id="search">
-                </div>
-                <button type="submit">Search</button>
-        </form>
+        <input type="search" [formControl]="searchText" placeholder="Search for a Song">
+        <ul *ngIf="fSongs">
+                        <li *ngFor="let song of fSongs">
+                                <p class="title">{{ song.title }}</p>
+                                <p class="artist">Artist: {{ song.artist }}</p>
+                                <p class="album">Album: {{ song.album }}</p>
+                                <p class="year">Year: {{ song.year }}</p>
+                                <p class="comment">Comment: {{ song.comment }}</p>
+                                <p class="genre">Genre: {{ song.genre }}</p>
+                                <p class="rating">Rating: {{ song.rating }}</p>
+                        </li>
+                </ul>        
         <ul *ngIf="songs">
-                <li *ngFor="let song of songs; let i=index">
+                <li *ngFor="let song of songs">
                         <p class="title">{{ song.title }}</p>
                         <p class="artist">Artist: {{ song.artist }}</p>
                         <p class="album">Album: {{ song.album }}</p>
@@ -26,6 +32,6 @@
                         <p class="genre">Genre: {{ song.genre }}</p>
                         <p class="rating">Rating: {{ song.rating }}</p>
                 </li>
-        </ul>  
+        </ul>
         
 </div>
