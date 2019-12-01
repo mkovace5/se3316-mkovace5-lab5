@@ -38,10 +38,6 @@ exports.song_details = function (req, res) {
 };
 
 exports.song_find = async function(req, res){
-    // Song.find({$text: {$search: searchString}}).skip(20).limit(10).exec(function(err, song) {
-    //     if (err) return next(err);
-    //     res.send(song);
-    //  });
     const songs = await Song.find();
     var options = {
         shouldSort: true,

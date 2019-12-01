@@ -9,8 +9,10 @@ import { FilterPipe } from "../filter.pipe";
 export class SongReviewComponent implements OnInit {
 
   constructor() { }
+  songID : String;
 
   ngOnInit() {
+    var songID = "2afa";
   }
   //for all reviews with song id = "id", list reviews
 }

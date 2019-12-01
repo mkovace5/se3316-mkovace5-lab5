@@ -8,6 +8,9 @@
             </select>
         </div><br>
         <div class="form-group">
+                User: <input id="userID" class="form-control" type="text" value = '{{auth.userProfile.name}}' placeholder= '{{auth.userProfile.name}}' name="userid" [(ngModel)]="userid" #userID="ngModel">
+            </div>
+        <div class="form-group">
             Add Rating: <input id="ratingNum" class="form-control" type="number" min="0" max="5" name="rating" [(ngModel)]="rating" #songRating="ngModel">
         </div>
             <input id="reviewCom" class="form-control" type="text" placeholder="Leave a review" name="review" [(ngModel)]="review" #songReview="ngModel">

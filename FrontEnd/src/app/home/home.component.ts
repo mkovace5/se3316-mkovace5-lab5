@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
   constructor(private _http: HttpService) { }
   songs: Object;
   fSongs: Object;
-  mySongs: Array<SongsComponent>;
 
   checkSearch(){
     this.searchText.valueChanges.subscribe(val => {

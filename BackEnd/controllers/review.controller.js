@@ -7,6 +7,7 @@ exports.review_create = function (req, res) {
     let review = new Review(
         {
             songid: req.body.songid,
+            user: req.body.user,
             rating: req.body.rating,
             reviews: req.body.reviews
         }

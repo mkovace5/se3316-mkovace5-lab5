@@ -9,7 +9,7 @@
 </div>
 
 <div class="play-container">
-        <h2 class="text-center">Top 10 Songs</h2>
+        <h2 class="text-center">Search for a Song</h2>
         <input type="search" [formControl]="searchText" placeholder="Search for a Song">
         <ul *ngIf="fSongs">
                         <li *ngFor="let song of fSongs">
@@ -21,7 +21,10 @@
                                 <p class="genre">Genre: {{ song.genre }}</p>
                                 <p class="rating">Rating: {{ song.rating }}</p>
                         </li>
-                </ul>        
+        </ul>
+</div>
+<div class="play-container">
+        <h2 class="text-center">Top 10 Songs</h2>
         <ul *ngIf="songs">
                 <li *ngFor="let song of songs">
                         <p class="title">{{ song.title }}</p>
