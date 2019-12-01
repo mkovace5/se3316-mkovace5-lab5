@@ -22,6 +22,8 @@ export class ReviewComponent implements OnInit {
     );
 
   }
+
+
   
   addReview(form: NgForm){
     console.log(form.value);
@@ -37,7 +39,7 @@ export class ReviewComponent implements OnInit {
     );
 
     this._http.postReview(data);
-  
+    this._http.updateRating(songID, songRating);
   }
   
 

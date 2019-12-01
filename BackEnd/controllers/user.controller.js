@@ -31,7 +31,7 @@ exports.song_create = function (req, res) {
 };
 
 exports.song_details = function (req, res) {
-    Song.find(req.params.id, function (err, song) {
+    Song.findById(req.params.id, function (err, song) {
         if (err) return next(err);
         res.send(song);
     })
@@ -61,9 +61,17 @@ exports.song_find = async function(req, res){
         ]
       };
       var fuse = new Fuse(songs, options); // "list" is the item array
-      res.send(fuse.search(req.params['search_term']));
-      console.log(req.params['search_term']);
+      res.send(fuse.search(req.params.string));
+      console.log(req.params.string);
       
+}
+
+exports.song_rating = function(req, res){
+    Song.findById(req.params.id, function (err, song) {
+        if (err) return next(err);
+        res.send(song.rating);
+        console.log(song.rating);
+    })
 }
 
 

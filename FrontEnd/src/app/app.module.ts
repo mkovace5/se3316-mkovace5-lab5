@@ -10,6 +10,7 @@ import { CallbackComponent } from './callback/callback.component';
 import { SongsComponent } from './songs/songs.component';
 import { ReviewComponent } from './review/review.component';
 import { FilterPipe} from './filter.pipe';
+import { SongReviewComponent } from './song-review/song-review.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FilterPipe} from './filter.pipe';
     CallbackComponent,
     SongsComponent,
     ReviewComponent,
-    FilterPipe
+    FilterPipe,
+    SongReviewComponent
   ],
   imports: [
     BrowserModule,
