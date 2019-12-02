@@ -1,10 +1,8 @@
 
-<h2>Reviews</h2>
-
 <div class="play-container">
-    <h2 class="text-center">Top 10 Songs</h2>
+    <h2 class="Reviews"></h2>
     <ul *ngIf="reviews">
-            <li *ngFor="let r of reviews">
+            <li *ngFor="let r of reviews | filter: songID">
                     <p class="title">Review: {{ r.review }}</p>
                     <p class="rating">Rating: {{ r.rating }}</p>
             </li>
