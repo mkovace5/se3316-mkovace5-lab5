@@ -13,7 +13,7 @@ export class SongDetailsComponent implements OnInit {
   private routeSub: Subscription;
   constructor(private _http:HttpService, private route: ActivatedRoute) { }
   songID : String;
-  songs : Object;
+  song : Object;
 
 
   ngOnInit() {
@@ -23,8 +23,8 @@ export class SongDetailsComponent implements OnInit {
       var songID = params['id'];
       console.log(songID);
       this._http.getSong(songID).subscribe(data => {
-           this.songs = data;
-           console.log(this.songs);
+           this.song = data;
+           console.log(this.song);
          });
     });
   

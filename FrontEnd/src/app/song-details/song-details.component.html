@@ -1,9 +1,9 @@
 
 <div class="play-container">
         <h2 class="text-center">Song Details</h2>
-        <ul *ngIf="songs">
-                <li *ngFor="let song of songs" >
-                        <p class="title">{{ song.title }}</p>
+        <ul *ngIf="song">
+                <li >
+                        <h3 class="title" id="position">{{ song.title }}</h3>
                         <p class="artist">Artist: {{ song.artist }}</p>
                         <p class="album">Album: {{ song.album }}</p>
                         <p class="year">Year: {{ song.year }}</p>
@@ -12,5 +12,7 @@
                         <p class="rating">Rating: {{ song.rating }}</p>
                 </li>
         </ul>
-        
+        <div class=button>
+            <h3 class="text" href="#"  [routerLink]="['/song-review', song._id]">View Reviews</h3>
+        </div>
 </div>

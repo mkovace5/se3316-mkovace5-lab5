@@ -25,11 +25,10 @@ exports.review_create = function (req, res) {
 exports.review_details = async function (req, res) {
     const reviews = await Review.find();
     var options = {
-        shouldSort: true,
-        findAllMatches: true,
-        threshold: 0.6,
+        caseSensitive: true,
+        threshold: 0,
         location: 0,
-        distance: 100,
+        distance: 0,
         maxPatternLength: 32,
         minMatchCharLength: 1,
         keys: [

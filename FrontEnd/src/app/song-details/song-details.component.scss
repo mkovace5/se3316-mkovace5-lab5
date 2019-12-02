@@ -23,6 +23,19 @@ div{
     color: white;
 }
 
+.text{
+    color: white;
+    position: relative;
+    bottom: 30px;
+}
+
+.button{
+    background: lighten(rgb(48, 48, 48), 10%);
+    padding: 1em;
+    width: 150px;
+    height: 10px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -34,8 +47,8 @@ ul {
         background: rgb(48, 48, 48);
         padding: 1em;
         margin-right: 1em;
-        width: 438px;
-        height: 100px;
+        width: 300px;
+        height: 300px;
         margin-bottom: 1em;
         display: flex;
         flex-direction: column;
