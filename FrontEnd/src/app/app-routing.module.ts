@@ -5,6 +5,7 @@ import { CallbackComponent } from './callback/callback.component';
 import { SongsComponent } from './songs/songs.component';
 import { ReviewComponent } from './review/review.component';
 import { SongReviewComponent } from './song-review/song-review.component';
+import { SongDetailsComponent } from './song-details/song-details.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'callback', component: CallbackComponent},
   {path: 'songs', component: SongsComponent},
   {path: 'review', component: ReviewComponent},
-  {path: 'song-review/:id', component: SongReviewComponent}
+  {path: 'song-review/:id', component: SongReviewComponent},
+  {path: 'song-details/:id', component: SongDetailsComponent}
 ];
 
 @NgModule({

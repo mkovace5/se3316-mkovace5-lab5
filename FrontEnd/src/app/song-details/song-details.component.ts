@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-song-details',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SongDetailsComponent implements OnInit {
 
-  constructor() { }
+  private routeSub: Subscription;
+  constructor(private _http:HttpService, private route: ActivatedRoute) { }
+  songID : String;
+  songs : Object;
+
 
   ngOnInit() {
+    this.routeSub = this.route.params.subscribe(params => {
+      console.log(params) //log the entire params object
+      console.log(params['id']) //log the value of id
+      var songID = params['id'];
+      console.log(songID);
+      this._http.getSong(songID).subscribe(data => {
+           this.songs = data;
+           console.log(this.songs);
+         });
+    });
+  
   }
 
+  ngOnDestroy() {
+    this.routeSub.unsubscribe();
+  }
 }

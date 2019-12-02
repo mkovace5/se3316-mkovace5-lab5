@@ -22,6 +22,11 @@ export class HttpService {
     return this.http.get("http://localhost:8080/songs/api/open/search");
   }
 
+  getSong(id){
+    console.log(id);
+    return this.http.get("http://localhost:8080/songs/api/open/song-details/" +id);
+  }
+
   searchSongs(search) {
     //console.log(search);
     console.log(search);

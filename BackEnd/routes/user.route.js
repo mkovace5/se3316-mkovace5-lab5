@@ -16,8 +16,8 @@ router.get('/api/open/search/:string', song_controller.song_find);
 router.get('/api/open/reviews/:id', review_controller.review_details);
 router.post('/api/secure/add-review', review_controller.review_create);
 router.get('/api/getRating/:id', song_controller.song_rating);
+router.get('/api/open/song-details/:id', song_controller.song_details);
 //router.post('/api/admin/copyright/:id', );
 //router.get('/api/admin/copyright', );
-//router.post('/api/admin/deactivate/:id', );
 
 module.exports = router;

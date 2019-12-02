@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { NgForm , FormControl} from '@angular/forms';
 import { SongsComponent } from '../songs/songs.component';
-import { FilterPipe} from '../filter.pipe';
 
 
 @Component({

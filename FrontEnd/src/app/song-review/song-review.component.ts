@@ -17,11 +17,6 @@ export class SongReviewComponent implements OnInit {
 
 
   ngOnInit() {
-    //var songID = "2afa";
-    // this._http.getReviews(d).subscribe(data => {
-    //   this.reviews = data;
-    //   console.log(this.reviews);
-    // });
     this.routeSub = this.route.params.subscribe(params => {
       console.log(params) //log the entire params object
       console.log(params['id']) //log the value of id

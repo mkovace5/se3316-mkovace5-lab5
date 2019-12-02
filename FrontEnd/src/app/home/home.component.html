@@ -26,7 +26,7 @@
 <div class="play-container">
         <h2 class="text-center">Top 10 Songs</h2>
         <ul *ngIf="songs">
-                <li *ngFor="let song of songs; let i = index" href="#" [routerLink]="['/song-review', song._id]">
+                <li *ngFor="let song of songs; let i = index" href="#" [routerLink]="['/song-details', song._id]">
                         <p class="title">{{ song.title }}</p>
                         <p class="artist">Artist: {{ song.artist }}</p>
                         <p class="album">Album: {{ song.album }}</p>
