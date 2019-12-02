@@ -31,13 +31,13 @@ export class ReviewComponent implements OnInit {
     console.log(form.value);
     
     var songID = form.value.songid;
-    var userID = form.value.userid;
+    var userID = form.value.user;
     var songRating = form.value.rating;
-    var songReview = form.value.review;
+    var songReview = form.value.reviews;
     
     let data: any = Object.assign(
       { songid: songID },
-      { userid: userID},
+      { user: userID},
       { rating: songRating },
       { reviews: songReview }
     );

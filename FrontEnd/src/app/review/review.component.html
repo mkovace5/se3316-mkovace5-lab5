@@ -8,12 +8,12 @@
             </select>
         </div><br>
         <div class="form-group">
-                User: <input id="userID" class="form-control" type="text" value = '{{auth.userProfile.name}}' placeholder= '{{auth.userProfile.name}}' name="userid" [(ngModel)]="userid" #userID="ngModel">
+                User: <input id="userID" class="form-control" type="text" value = '{{auth.userProfile.name}}' placeholder= '{{auth.userProfile.name}}' name="user" [(ngModel)]="user" #userID="ngModel">
             </div>
         <div class="form-group">
-            Add Rating: <input id="ratingNum" class="form-control" type="number" min="0" max="5" name="rating" [(ngModel)]="rating" #songRating="ngModel">
+            Add Rating: <input id="ratingNum" class="form-control" type="number" min="1" max="5" name="rating" [(ngModel)]="rating" #songRating="ngModel">
         </div>
-            <input id="reviewCom" class="form-control" type="text" placeholder="Leave a review" name="review" [(ngModel)]="review" #songReview="ngModel">
+            <input id="reviewCom" class="form-control" type="text" placeholder="Leave a review" name="reviews" [(ngModel)]="reviews" #songReview="ngModel">
         <div class="form-group">  
             <button type="submit" id="reviewBtn">Add Review</button>
         </div>

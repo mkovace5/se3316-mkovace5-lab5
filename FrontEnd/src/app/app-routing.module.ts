@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'callback', component: CallbackComponent},
   {path: 'songs', component: SongsComponent},
   {path: 'review', component: ReviewComponent},
-  {path: 'song-review', component: SongReviewComponent}
+  {path: 'song-review/:id', component: SongReviewComponent}
 ];
 
 @NgModule({

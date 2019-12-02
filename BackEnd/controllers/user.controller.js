@@ -33,7 +33,8 @@ exports.song_create = function (req, res) {
 exports.song_details = function (req, res) {
     Song.findById(req.params.id, function (err, song) {
         if (err) return next(err);
-        res.send(song);
+        var fuse = new Fuse(songs);
+        res.send(fuse.search(song));
     })
 };
 

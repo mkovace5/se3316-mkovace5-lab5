@@ -12,7 +12,7 @@
         <h2 class="text-center">Search for a Song</h2>
         <input type="search" [formControl]="searchText" placeholder="Search for a Song">
         <ul *ngIf="fSongs">
-                        <li *ngFor="let song of fSongs" href="#" routerLink="/song-review">
+                        <li *ngFor="let song of fSongs; let i = index" href="#" value= {{song._id}} [routerLink]="['/song-review', song._id]">
                                 <p class="title">{{ song.title }}</p>
                                 <p class="artist">Artist: {{ song.artist }}</p>
                                 <p class="album">Album: {{ song.album }}</p>
@@ -26,7 +26,7 @@
 <div class="play-container">
         <h2 class="text-center">Top 10 Songs</h2>
         <ul *ngIf="songs">
-                <li *ngFor="let song of songs" href="#" routerLink="/song-review">
+                <li *ngFor="let song of songs; let i = index" href="#" [routerLink]="['/song-review', song._id]">
                         <p class="title">{{ song.title }}</p>
                         <p class="artist">Artist: {{ song.artist }}</p>
                         <p class="album">Album: {{ song.album }}</p>

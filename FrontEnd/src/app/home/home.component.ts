@@ -33,4 +33,9 @@ export class HomeComponent implements OnInit {
     });
     this.checkSearch();
   }
+
+  goToSong(obj){
+    var id = obj;
+    console.log(id);
+  }
 }

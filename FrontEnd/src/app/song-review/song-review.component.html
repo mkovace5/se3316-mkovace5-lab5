@@ -1,9 +1,10 @@
 
 <div class="play-container">
-    <h2 class="Reviews"></h2>
+    <h2 class="Reviews">Reviews</h2>
     <ul *ngIf="reviews">
-            <li *ngFor="let r of reviews | filter: songID">
-                    <p class="title">Review: {{ r.review }}</p>
+            <li *ngFor="let r of reviews">
+                    <p class="user">User: {{ r.user }}</p>
+                    <p class="title">Review: {{ r.reviews }}</p>
                     <p class="rating">Rating: {{ r.rating }}</p>
             </li>
     </ul>
