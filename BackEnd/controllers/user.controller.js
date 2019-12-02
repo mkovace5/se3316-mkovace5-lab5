@@ -31,10 +31,9 @@ exports.song_create = function (req, res) {
 };
 
 exports.song_details = function (req, res) {
-    Song.findById(req.params.id, function (err, song) {
+    Song.findByID(req.params.id, function (err, song) {
         if (err) return next(err);
-        var fuse = new Fuse(songs);
-        res.send(fuse.search(song));
+        res.send(song);
     })
 };
 

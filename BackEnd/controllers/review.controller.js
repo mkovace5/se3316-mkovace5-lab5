@@ -1,6 +1,7 @@
 //controller user
 
 const Review = require('../models/review.model');
+const Fuse = require('fuse.js');
 
 
 exports.review_create = function (req, res) {
@@ -21,11 +22,24 @@ exports.review_create = function (req, res) {
     })
 };
 
-exports.review_details = function (req, res) {
-    Review.findById(req.params.id, function (err, review) {
-        if (err) return next(err);
-        res.send(review);
-    })
+exports.review_details = async function (req, res) {
+    const reviews = await Review.find();
+    var options = {
+        shouldSort: true,
+        findAllMatches: true,
+        threshold: 0.6,
+        location: 0,
+        distance: 100,
+        maxPatternLength: 32,
+        minMatchCharLength: 1,
+        keys: [
+          "songid"
+        ]
+    }
+    var fuse = new Fuse(reviews, options); // "list" is the item array
+      res.send(fuse.search(req.params.id));
+      console.log(req.params.id);
+
 };
 
 

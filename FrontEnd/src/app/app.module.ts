@@ -11,6 +11,7 @@ import { SongsComponent } from './songs/songs.component';
 import { ReviewComponent } from './review/review.component';
 import { FilterPipe} from './filter.pipe';
 import { SongReviewComponent } from './song-review/song-review.component';
+import { SongDetailsComponent } from './song-details/song-details.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SongReviewComponent } from './song-review/song-review.component';
     SongsComponent,
     ReviewComponent,
     FilterPipe,
-    SongReviewComponent
+    SongReviewComponent,
+    SongDetailsComponent
   ],
   imports: [
     BrowserModule,

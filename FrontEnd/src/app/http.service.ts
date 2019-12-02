@@ -44,7 +44,7 @@ export class HttpService {
   }
 
   getReviews(id){
-    return this.http.get("http://localhost:8080/songs/api/open/reviews/"+id);
+    return this.http.get("http://localhost:8080/songs/api/open/reviews/" +id);
   }
 
   updateRating(id, rating){
