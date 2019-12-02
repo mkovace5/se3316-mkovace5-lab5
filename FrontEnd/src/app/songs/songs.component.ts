@@ -24,8 +24,6 @@ export class SongsComponent implements OnInit {
   addSong(form: NgForm){
     console.log(form.value);
 
-    var jsonStr = 
-    '{"mySongs":[{"title":"","artist":"","album":"","year":"","comment":"","genre":""}]}';
 
     var songName = form.value.title;
     var artistName = form.value.artist;
@@ -40,8 +38,17 @@ export class SongsComponent implements OnInit {
     console.log(songYear);
     console.log(songComment);
     console.log(songGenre);
-
-    let data: any = Object.assign(
+    
+    if(songName == undefined || artistName == undefined){
+      if(songName == undefined){
+        alert("Please Enter a Song Title");}
+      else if(artistName == undefined){
+        alert("Pleas Enter an Artist Name")
+      }
+    }
+    
+    else{
+      let data: any = Object.assign(
       { title: songName },
       { artist: artistName },
       { album: albumName },
@@ -49,19 +56,15 @@ export class SongsComponent implements OnInit {
       { comment: songComment },
       { genre: songGenre },
       { rating: 0}
-    );
+      );
 
-    this._http.postSong(data);
-
-    /*var obj = JSON.parse(jsonStr);
-    obj['G11S'].push(data);
-
-    jsonStr = JSON.stringify(obj);
-    console.log(jsonStr);   */
-  }
+      this._http.postSong(data);
+    }
 
   
-     
+  }
+
+
 
 }
 
