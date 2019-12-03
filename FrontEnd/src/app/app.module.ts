@@ -12,6 +12,7 @@ import { ReviewComponent } from './review/review.component';
 import { FilterPipe} from './filter.pipe';
 import { SongReviewComponent } from './song-review/song-review.component';
 import { SongDetailsComponent } from './song-details/song-details.component';
+import { DmcaComponent } from './dmca/dmca.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SongDetailsComponent } from './song-details/song-details.component';
     ReviewComponent,
     FilterPipe,
     SongReviewComponent,
-    SongDetailsComponent
+    SongDetailsComponent,
+    DmcaComponent
   ],
   imports: [
     BrowserModule,
