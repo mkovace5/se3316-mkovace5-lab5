@@ -10,11 +10,10 @@ export class DmcaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    window.onload = function() {
       if(localStorage.getItem('content')) {
         document.querySelector('.content').innerHTML = localStorage.getItem('content');
       }
-    }
+    
     
     let editBtn = document.querySelector('#edit_content');
     let content = document.querySelector('.content');
@@ -34,9 +33,9 @@ export class DmcaComponent implements OnInit {
     document.getElementById("content").contentEditable = "true";
   }
   save(){
-    
+    let content = document.getElementById('content');
       document.getElementById("content").contentEditable = "false";
-    
+      localStorage.setItem('content', content.innerHTML);
   }
 
 }

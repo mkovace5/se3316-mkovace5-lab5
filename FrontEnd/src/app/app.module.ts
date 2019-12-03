@@ -13,6 +13,7 @@ import { FilterPipe} from './filter.pipe';
 import { SongReviewComponent } from './song-review/song-review.component';
 import { SongDetailsComponent } from './song-details/song-details.component';
 import { DmcaComponent } from './dmca/dmca.component';
+import { DcmaNoticeComponent } from './dcma-notice/dcma-notice.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { DmcaComponent } from './dmca/dmca.component';
     FilterPipe,
     SongReviewComponent,
     SongDetailsComponent,
-    DmcaComponent
+    DmcaComponent,
+    DcmaNoticeComponent
   ],
   imports: [
     BrowserModule,
