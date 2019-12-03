@@ -9,6 +9,25 @@ exports.test = function (req, res) {
     res.send('Greetings from the Test controller!');
 };
 
+exports.dmca_details = async function (req, res) {
+    const dmcas = await DMCA.find();
+    var options = {
+        caseSensitive: true,
+        threshold: 0,
+        location: 0,
+        distance: 0,
+        maxPatternLength: 32,
+        minMatchCharLength: 1,
+        keys: [
+          "songid"
+        ]
+    }
+    var fuse = new Fuse(dmcas, options); // "list" is the item array
+      res.send(fuse.search(req.params.id));
+      console.log(req.params.id);
+
+};
+
 exports.dmca_create = function (req, res) {
     let dmca = new DMCA(
         {

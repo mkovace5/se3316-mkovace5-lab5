@@ -1,1 +1,11 @@
-<p>song-dmca works!</p>
+
+<div class="play-container">
+        <h2 class="Dmcas">DMCA Requests</h2>
+        <ul *ngIf="dmcas">
+                <li *ngFor="let d of dmcas;  let i=index">
+                        <p class="type">Type: {{ d.type }}</p>
+                        <p class="user">User: {{ d.user }}</p>
+                        <p class="date">Date: {{ d.date }}</p>
+                </li>
+        </ul>
+</div>

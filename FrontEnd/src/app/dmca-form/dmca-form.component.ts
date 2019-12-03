@@ -35,7 +35,7 @@ export class DmcaFormComponent implements OnInit {
   addDmca(form: NgForm){
     console.log(form.value);
     
-    var songID = form.value.type;
+    var songID = form.value.songid;
     var dmcaType = form.value.type;
     var userID = form.value.user;
     var datePos= form.value.date;

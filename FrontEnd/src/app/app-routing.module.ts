@@ -9,6 +9,7 @@ import { SongDetailsComponent } from './song-details/song-details.component';
 import { DmcaComponent } from './dmca/dmca.component';
 import { DcmaNoticeComponent } from './dcma-notice/dcma-notice.component';
 import { DmcaFormComponent } from './dmca-form/dmca-form.component';
+import { SongDmcaComponent } from './song-dmca/song-dmca.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
   {path: 'song-details/:id', component: SongDetailsComponent},
   {path: 'dmca', component: DmcaComponent},
   {path: 'notice', component: DcmaNoticeComponent},
-  {path: 'song-dmca/:id', component: DmcaFormComponent},
+  {path: 'song-dmca/:id', component: SongDmcaComponent},
   {path: 'dmcaform', component: DmcaFormComponent}
 ];
 

@@ -18,6 +18,7 @@ router.post('/api/secure/add-review', review_controller.review_create);
 router.get('/api/getRating/:id', song_controller.song_rating);
 router.get('/api/open/song-details/:id', song_controller.song_details);
 router.post('/api/open/dmca', song_controller.dmca_create);
+router.get('/api/admin/song-dmca/:id', song_controller.dmca_details);
 //router.post('/api/admin/copyright/:id', );
 //router.get('/api/admin/copyright', );
 

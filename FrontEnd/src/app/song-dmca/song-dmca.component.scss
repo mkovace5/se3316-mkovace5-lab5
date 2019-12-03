@@ -1,0 +1,53 @@
+.play-container {
+    padding: 3em;
+    border: 1px solid lightgray;
+    margin-bottom: 1em;
+    position: relative;
+    top: 40px;
+
+    input{
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+    body{
+        position: relative;
+        top: -40px;
+        color: white;
+    }
+}
+h2{
+    color: white;
+}
+
+div{
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        background: rgb(48, 48, 48);
+        padding: 1em;
+        margin-right: 1em;
+        width: 438px;
+        height: 100px;
+        margin-bottom: 1em;
+        display: flex;
+        flex-direction: column;
+
+        p {
+            margin: 0;
+        }
+
+        p.name {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+    }
+}

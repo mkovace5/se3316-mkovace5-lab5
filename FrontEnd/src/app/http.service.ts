@@ -63,7 +63,7 @@ export class HttpService {
   }
 
   getDmca(id){
-    return this.http.get("http://localhost:8080/songs/api/open/song-dmca/" +id);
+    return this.http.get("http://localhost:8080/songs/api/admin/song-dmca/" +id);
   }
 
 }
