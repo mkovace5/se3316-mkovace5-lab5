@@ -10,32 +10,21 @@ export class DmcaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-      if(localStorage.getItem('content')) {
-        document.querySelector('.content').innerHTML = localStorage.getItem('content');
-      }
+    if(localStorage.getItem('security')) {
+      document.getElementById('security').innerHTML = localStorage.getItem('security');
+    }
+  
+      let content = document.getElementById('security');
     
-    
-    let editBtn = document.querySelector('#edit_content');
-    let content = document.querySelector('.content');
-    
-    editBtn.addEventListener('click', () => {
-      // Toggle contentEditable on button click
-      
-      
-      // If disabled, save text
-      if(document.getElementById("content").contentEditable === 'false') {
-        localStorage.setItem('content', content.innerHTML);
-      }
-    });
   }
 
   edit(){
-    document.getElementById("content").contentEditable = "true";
+    document.getElementById("security").contentEditable = "true";
   }
   save(){
-    let content = document.getElementById('content');
-      document.getElementById("content").contentEditable = "false";
-      localStorage.setItem('content', content.innerHTML);
+    let content = document.getElementById('security');
+      document.getElementById("security").contentEditable = "false";
+      localStorage.setItem('security', content.innerHTML);
   }
 
 }

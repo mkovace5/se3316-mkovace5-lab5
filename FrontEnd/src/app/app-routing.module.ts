@@ -7,6 +7,7 @@ import { ReviewComponent } from './review/review.component';
 import { SongReviewComponent } from './song-review/song-review.component';
 import { SongDetailsComponent } from './song-details/song-details.component';
 import { DmcaComponent } from './dmca/dmca.component';
+import { DcmaNoticeComponent } from './dcma-notice/dcma-notice.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'review', component: ReviewComponent},
   {path: 'song-review/:id', component: SongReviewComponent},
   {path: 'song-details/:id', component: SongDetailsComponent},
-  {path: 'dmca', component: DmcaComponent}
+  {path: 'dmca', component: DmcaComponent},
+  {path: 'notice', component: DcmaNoticeComponent}
 ];
 
 @NgModule({
