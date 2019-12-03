@@ -14,6 +14,8 @@ import { SongReviewComponent } from './song-review/song-review.component';
 import { SongDetailsComponent } from './song-details/song-details.component';
 import { DmcaComponent } from './dmca/dmca.component';
 import { DcmaNoticeComponent } from './dcma-notice/dcma-notice.component';
+import { DmcaFormComponent } from './dmca-form/dmca-form.component';
+import { SongDmcaComponent } from './song-dmca/song-dmca.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { DcmaNoticeComponent } from './dcma-notice/dcma-notice.component';
     SongReviewComponent,
     SongDetailsComponent,
     DmcaComponent,
-    DcmaNoticeComponent
+    DcmaNoticeComponent,
+    DmcaFormComponent,
+    SongDmcaComponent
   ],
   imports: [
     BrowserModule,

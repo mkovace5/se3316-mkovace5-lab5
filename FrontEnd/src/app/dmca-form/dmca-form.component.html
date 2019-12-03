@@ -1,0 +1,26 @@
+
+<div class="play-container">
+        <form #addDmcaForm='ngForm' (ngSubmit)="addDmca(addDmcaForm)" class="dmcaForm">
+            <div class="form-group">
+                Choose Song: <select ng-model="selectedSong" id="dropdown" class="form-control" name="songid" id="songid" [(ngModel)]="songid" #songID="ngModel">
+                    <option *ngFor="let song of songs" value="{{song._id}}" >{{song.title}}</option>
+                </select>
+            </div><br>
+            <div class="form-group">
+                    Type of Issue: <select ng-model="selectedType" id="dropdown" class="form-control" name="type" id="type" [(ngModel)]="type" #dmcaType="ngModel">
+                        <option id="takedown">Takedown Request</option>
+                        <option id="infringement">Infringement Notice</option>
+                        <option id="dispute">Dispute Claim</option>
+                    </select>
+                </div><br/>
+            <div class="form-group">
+                    User: <input id="userID" class="form-control" type="text" value = '{{auth.userProfile.name}}' placeholder= '{{auth.userProfile.name}}' name="user" [(ngModel)]="user" #userID="ngModel">
+                </div>
+            <div class="form-group">
+                Date: <input id="date" class="form-control" type="date" name="date" [(ngModel)]="date" #datePos="ngModel">
+            </div>    
+            <div class="form-group">  
+                <button type="submit" id="reviewBtn">Send Notice</button>
+            </div>
+        </form>
+    </div>

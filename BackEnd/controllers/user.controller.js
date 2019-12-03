@@ -1,12 +1,30 @@
 //controller user
 
 const Song = require('../models/user.model');
-const App = require('../app');
+const DMCA = require('../models/dmca.model');
 const Fuse = require('fuse.js');
 
 //Simple version, without validation or sanitation
 exports.test = function (req, res) {
     res.send('Greetings from the Test controller!');
+};
+
+exports.dmca_create = function (req, res) {
+    let dmca = new DMCA(
+        {
+            songid: req.body.songid,
+            type: req.body.type,
+            user: req.body.user,
+            date: req.body.date
+        }
+    );
+
+    dmca.save(function (err) {
+        if (err) {
+            return next(err);
+        }
+        res.send('Dmca Created successfully')
+    })
 };
 
 exports.song_create = function (req, res) {

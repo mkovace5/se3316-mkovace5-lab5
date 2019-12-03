@@ -36,7 +36,7 @@ export class HttpService {
   baseUrl:string = "http://localhost:8080/songs/api/secure/song";
   baseUrl2:string = "http://localhost:8080/songs/api/admin/deactivate/:id";
   baseUrl3:string = "http://localhost:8080/songs/api/secure/add-review";
-  baseUrl4:string = "http://localhost:8080/songs/api/open/reviews"
+  baseUrl4:string = "http://localhost:8080/songs/api/open/dmca"
 
   postSong(obj){
     console.log(obj);
@@ -57,4 +57,13 @@ export class HttpService {
     var rat = this.http.get("http://localhost:8080/songs/api/getRating/" +id);
     var total = rat
   }
+  postDmca(obj){
+    console.log(obj);
+    this.http.post(this.baseUrl4, obj, httpHeader).subscribe(data => data);
+  }
+
+  getDmca(id){
+    return this.http.get("http://localhost:8080/songs/api/open/song-dmca/" +id);
+  }
+
 }
