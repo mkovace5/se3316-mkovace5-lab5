@@ -9,9 +9,11 @@
             To report a song go to the songs page and place a notice. Enter your email,. We will get back to you as soon as possible
             Contact mina.k@hotmail.com for any issues.
         </body>
-<button (click)="edit()">Edit DMCA Notice</button>
-<button (click)="save()">Save</button>
-<button href="#" [routerLink]="['/dmcaform']">Add DMCA Request</button>
+    <div *ngIf="auth.loggedIn && auth.isAdmin">
+        <button (click)="edit()">Edit DMCA Notice</button>
+        <button (click)="save()">Save</button>
+    </div>
+    <button href="#" [routerLink]="['/dmcaform']">Add DMCA Request</button>
         
 </div>
 

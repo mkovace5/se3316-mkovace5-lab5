@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-song-details',
@@ -11,7 +12,7 @@ import { Subscription } from 'rxjs';
 export class SongDetailsComponent implements OnInit {
 
   private routeSub: Subscription;
-  constructor(private _http:HttpService, private route: ActivatedRoute) { }
+  constructor(private _http:HttpService, private route: ActivatedRoute, public auth: AuthService) { }
   songID : String;
   song : Object;
 

@@ -16,6 +16,7 @@ import { DmcaComponent } from './dmca/dmca.component';
 import { DcmaNoticeComponent } from './dcma-notice/dcma-notice.component';
 import { DmcaFormComponent } from './dmca-form/dmca-form.component';
 import { SongDmcaComponent } from './song-dmca/song-dmca.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SongDmcaComponent } from './song-dmca/song-dmca.component';
     DmcaComponent,
     DcmaNoticeComponent,
     DmcaFormComponent,
-    SongDmcaComponent
+    SongDmcaComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

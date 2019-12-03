@@ -13,7 +13,8 @@ BY USING OR ACCESSING OUR WEBSITES OR BY PROVIDING PERSONAL INFORMATION TO US ON
 For the purposes of the EU General Data Protection Regulation 2016/679 (the “GDPR”) the data controller is the Public Company Accounting Oversight Board, with its headquarters offices at Chakma Engineering Building, London ON, Canada.
 
 </body>
-<button (click)="edit()">Edit Privacy Policy</button>
-<button (click)="save()">Save</button>
-        
+<div *ngIf="auth.loggedIn && auth.isAdmin">
+    <button (click)="edit()">Edit Privacy Policy</button>
+    <button (click)="save()">Save</button>
+</div>     
 </div>

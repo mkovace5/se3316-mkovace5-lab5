@@ -7,6 +7,9 @@
       <ng-template [ngIf]="!auth.loggingIn">
         <ul>
           <li><a href="#" routerLink="/">Home</a></li>
+          <span>
+              <li><a href='#' routerLink="/notice">DMCA</a></li>
+          </span>
           <li><a href="#" *ngIf="!auth.loggedIn" (click)="auth.login()">Log In</a></li>
           <span *ngIf="auth.loggedIn && auth.userProfile">
               <li><a href='#' routerLink="/songs">Add Songs</a></li>
@@ -14,9 +17,14 @@
           <span *ngIf="auth.loggedIn && auth.userProfile">
               <li><a href='#' routerLink="/review">Add Reviews</a></li>
           </span>
-          <span>
-              <li><a href='#' routerLink="/notice">DMCA</a></li>
-          </span>
+          
+          <li>
+              <a
+                *ngIf="auth.loggedIn && auth.isAdmin"
+                routerLink="/admin"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">Admin</a>
+          </li>
           <span *ngIf="auth.loggedIn && auth.userProfile">
               <li><a href="#" (click)="auth.logout()">Log Out</a></li>
           </span>

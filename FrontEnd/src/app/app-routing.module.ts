@@ -10,7 +10,7 @@ import { DmcaComponent } from './dmca/dmca.component';
 import { DcmaNoticeComponent } from './dcma-notice/dcma-notice.component';
 import { DmcaFormComponent } from './dmca-form/dmca-form.component';
 import { SongDmcaComponent } from './song-dmca/song-dmca.component';
-
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent },
@@ -22,7 +22,16 @@ const routes: Routes = [
   {path: 'dmca', component: DmcaComponent},
   {path: 'notice', component: DcmaNoticeComponent},
   {path: 'song-dmca/:id', component: SongDmcaComponent},
-  {path: 'dmcaform', component: DmcaFormComponent}
+  {path: 'dmcaform', component: DmcaFormComponent},
+  {path: 'admin', /*canActivate: [
+    AuthGuard, AdminGuard],*/ 
+    children: [
+      {
+        path: '',
+        component: AdminComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({

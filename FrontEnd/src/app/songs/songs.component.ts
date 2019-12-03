@@ -31,6 +31,7 @@ export class SongsComponent implements OnInit {
     var songYear = form.value.year;
     var songComment = form.value.comment;
     var songGenre = form.value.genre;
+    var songRating = form.value.rating;
 
     console.log(songName);
     console.log(artistName);
@@ -55,7 +56,7 @@ export class SongsComponent implements OnInit {
       { year: songYear },
       { comment: songComment },
       { genre: songGenre },
-      { rating: 0}
+      { rating: songRating}
       );
 
       this._http.postSong(data);

@@ -17,7 +17,7 @@
             <h3 class="text" href="#"  [routerLink]="['/song-review', song._id]">View Reviews</h3>
             
         </div>
-        <div class=button2>
+        <div class=button2 *ngIf="auth.loggedIn && auth.isAdmin">
             <h3 class="text" href="#" [routerLink]="['/song-dmca', song._id]">View DMCA Request</h3>
         </div>
         </ul>
